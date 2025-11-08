@@ -1,0 +1,52 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* --- Global behaviors --- */
+html {
+  scroll-behavior: smooth;
+}
+
+section {
+  scroll-margin-top: 100px; /* prevents navbar overlap on anchor jumps */
+}
+
+/* --- Container widths --- */
+.container {
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* --- Responsive media --- */
+img,
+video {
+  max-width: 100%;
+  height: auto;
+}
+
+/* --- Smooth dark/light transitions --- */
+html,
+body,
+div {
+  transition: background-color 0.35s ease, color 0.35s ease;
+}
+
+/* --- Typography defaults --- */
+body {
+  @apply font-sans text-base leading-relaxed;
+}
+
+/* --- Utility tweaks --- */
+a,
+button {
+  transition: all 0.25s ease;
+}
+
+/* --- Responsive spacing for small devices --- */
+@media (max-width: 768px) {
+  section {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+}
