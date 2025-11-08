@@ -1,0 +1,56 @@
+{
+  "Oracle": [
+    {
+      "title": "Oracle Cloud Infrastructure Foundations Associate",
+      "date": "2025",
+      "certificate_file": "Foundations Associate.pdf",
+      "badge": "badges/oci-foundations.jpeg"
+    },
+    {
+      "title": "Oracle Cloud Infrastructure AI Foundations Associate",
+      "date": "2025",
+      "certificate_file": "OCI AI Foundations Associate.pdf",
+      "badge": "badges/oci-ai.jpg"
+    },
+    {
+      "title": "Oracle Cloud Infrastructure Data Management Associate",
+      "date": "2025",
+      "certificate_file": "OCI Generative AI Professional.pdf",
+      "badge": "badges/oci-data.jpg"
+    },
+    {
+      "title": "Oracle Analytics Cloud 2025 Certified Professional",
+      "date": "2025",
+      "certificate_file": "Oracle Analytics Cloud 2025 Certified Professional.pdf",
+      "badge": "badges/oracle-analytics.jpg"
+    },
+    {
+      "title": "Oracle Generative AI Leader (Specialization)",
+      "date": "2025",
+      "certificate_file": "GenerativeAILeader20251107-29-k01nje.pdf",
+      "badge": "badges/generative-ai-leader-certification.png"
+    }
+  ],
+  "Google Cloud": [
+    {
+      "title": "Google Cloud Generative AI Professional",
+      "date": "2025",
+      "certificate_file": "gcp-generative-ai-2025.pdf",
+      "badge": "badges/oci-ai.jpg"
+    },
+    {
+      "title": "Google Cloud Certified - Cloud Practitioner",
+      "date": "2022",
+      "certificate_file": "gcp-cloud-practitioner-2022.pdf",
+      "badge": "badges/oci-foundations.jpeg"
+    }
+  ],
+  "AWS": [
+    {
+      "title": "AWS Certified Cloud Practitioner",
+      "date": "2022",
+      "certificate_file": "gcp-cloud-practitioner-2022.pdf",
+      "badge": "badges/aws-certified-cloud-practitioner.png"
+    }
+  ]
+}
