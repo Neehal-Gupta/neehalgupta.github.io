@@ -1,94 +1,75 @@
-import React from 'react'
-import { motion } from 'framer-motion'
+import { useEffect, useState } from "react";
+import { Sun, Moon } from "lucide-react";
+import TypedHeading from "./TypedHeading";
 
 export default function Hero() {
+  const [theme, setTheme] = useState(() => {
+    try {
+      return localStorage.getItem("theme") || (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+    } catch {
+      return 'light';
+    }
+  });
+
+  useEffect(() => {
+    try {
+      if (theme === "dark") document.documentElement.classList.add("dark");
+      else document.documentElement.classList.remove("dark");
+      localStorage.setItem("theme", theme);
+    } catch {}
+  }, [theme]);
+
   return (
-    <section
-      id="home"
-      className="relative min-h-screen flex flex-col justify-center items-start overflow-hidden
-                 bg-gradient-to-br from-indigo-100 via-white to-purple-100
-                 dark:from-slate-800 dark:via-slate-900 dark:to-slate-800
-                 transition-colors px-4 sm:px-6 lg:px-8"
-    >
-      {/* Soft overlay for contrast */}
-      <div className="absolute inset-0 bg-gradient-to-b from-white/60 dark:from-slate-900/60 pointer-events-none"></div>
+    <section id="hero" className="max-w-6xl mx-auto px-4 py-12 flex flex-col sm:flex-row items-center gap-8">
+      <div className="flex-shrink-0">
+        <img
+          src="https://github.com/Neehal-Gupta.png"
+          alt="Neehal Raj Gupta"
+          className="w-40 h-40 rounded-full shadow-2xl object-cover border-4 border-white dark:border-slate-700"
+        />
+      </div>
 
-      {/* --- Text content --- */}
-      <motion.div
-        initial={{ opacity: 0, y: 40 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 1 }}
-        className="relative z-10 max-w-2xl"
-      >
-        <h2 className="text-4xl md:text-5xl font-bold leading-tight">
-          Hi, I’m{' '}
-          <span className="text-indigo-600 dark:text-indigo-400">
-            Neehal Raj Gupta
-          </span>
-        </h2>
+      <div className="flex-1">
+        <TypedHeading
+          lines={[
+            "Neehal Raj Gupta",
+            "Software Engineer — Java, Cloud & Generative AI",
+            "I build production-ready web & cloud applications"
+          ]}
+        />
 
-        <p className="mt-4 text-lg md:text-xl text-slate-700 dark:text-slate-300">
-          Software Engineer (Backend) — Java, Spring, Kubernetes, Kafka, and
-          Docker. Passionate about building scalable systems and exploring
-          modern DevOps practices.
+        <p className="mt-4 text-slate-600 dark:text-slate-300 max-w-2xl">
+          Experienced in building cloud-native applications and implementing AI-powered solutions. I focus on clean code, scalable systems and fast iteration.
         </p>
 
-        <div className="mt-6 flex gap-4 flex-wrap">
+        <div className="flex flex-wrap gap-4 mt-6">
           <a
-            href="https://github.com/neehalrajgupta/portfolio/blob/main/resume.pdf"
+            href="/NeehalRajGupta.pdf"
             target="_blank"
-            rel="noreferrer"
-            className="px-4 py-2 rounded-lg border border-indigo-600 text-indigo-600 hover:bg-indigo-600 hover:text-white transition"
+            rel="noopener noreferrer"
+            className="bg-blue-600 hover:bg-blue-700 text-white font-semibold px-6 py-3 rounded-lg shadow-lg transition transform hover:-translate-y-0.5"
           >
             View Resume
           </a>
-          <a
-            href="https://github.com/neehalrajgupta/portfolio/tree/main/certificates"
-            target="_blank"
-            rel="noreferrer"
-            className="px-4 py-2 rounded-lg bg-indigo-600 text-white hover:bg-indigo-700 transition"
-          >
-            Certifications
-          </a>
-        </div>
 
-        {/* --- Social Icons --- */}
-        <div className="flex gap-6 mt-8 text-2xl text-slate-600 dark:text-slate-300">
-          <a
-            href="https://linkedin.com/in/neehal-raj-gupta-28027217b/"
-            target="_blank"
-            rel="noreferrer"
-            className="hover:text-indigo-600"
+          {/* <a
+            href="#certifications"
+            className="border border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white font-semibold px-6 py-3 rounded-lg shadow-lg transition transform hover:-translate-y-0.5"
           >
-            <i className="fa-brands fa-linkedin"></i>
-          </a>
-          <a
-            href="https://github.com/neehalrajgupta"
-            target="_blank"
-            rel="noreferrer"
-            className="hover:text-indigo-600"
-          >
-            <i className="fa-brands fa-github"></i>
-          </a>
-          <a href="mailto:nrg9922@gmail.com" className="hover:text-indigo-600">
-            <i className="fa-solid fa-envelope"></i>
-          </a>
+            View Certifications
+          </a> */}
         </div>
-      </motion.div>
+      </div>
 
-      {/* --- Floating Image --- */}
-      <motion.div
-        initial={{ opacity: 0, scale: 0.9 }}
-        animate={{ opacity: 1, scale: 1 }}
-        transition={{ duration: 1.2, delay: 0.3 }}
-        className="absolute right-8 top-8 z-20 hidden lg:block transform -translate-y-8"
-      >
-        <img
-          src="https://cdn-icons-png.flaticon.com/512/906/906324.png"
-          alt="Developer illustration"
-          className="w-56 h-56 rounded-full shadow-2xl object-cover border-4 border-white dark:border-slate-700"
-        />
-      </motion.div>
+      {/* <div className="ml-auto flex items-start gap-3">
+        <button
+          aria-label="Toggle theme"
+          onClick={() => setTheme(t => t === "dark" ? "light" : "dark")}
+          className="p-2 rounded-lg bg-slate-200 dark:bg-slate-700 transition transform hover:scale-105"
+        >
+          {theme === "dark" ? <Sun size={18} /> : <Moon size={18} />}
+        </button>
+      </div> */}
     </section>
-  )
+)
 }

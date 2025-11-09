@@ -50,3 +50,38 @@ button {
     padding-right: 1rem;
   }
 }
+
+html {
+  scroll-behavior: smooth;
+}
+
+section {
+  scroll-margin-top: 80px;
+}
+
+/* Custom hexagonal clipping mask for AWS badges only */
+.hex-mask {
+  clip-path: polygon(
+    25% 5%,
+    75% 5%,
+    100% 50%,
+    75% 95%,
+    25% 95%,
+    0% 50%
+  );
+}
+/* small loader */
+#site-loader { position: fixed; inset:0; display:flex; align-items:center; justify-content:center; z-index:9999; background:#fff; }
+.dark #site-loader { background:#0b1220; }
+
+/* hex clip for badges if used elsewhere */
+.clip-hexagon {
+  clip-path: polygon(25% 6%, 75% 6%, 100% 50%, 75% 94%, 25% 94%, 0% 50%);
+}
+
+/* smooth scroll behavior (if not present) */
+html { scroll-behavior: smooth; }
+
+/* minor utility for inner shadow when blending AWS badges */
+.shadow-inner { box-shadow: inset 0 2px 6px rgba(0,0,0,0.06); }
+

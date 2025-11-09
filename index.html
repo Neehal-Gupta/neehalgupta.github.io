@@ -5,9 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Neehal Raj Gupta — Portfolio</title>
 
-    <!-- Set theme early to prevent flash -->
+    <!-- Optional: Theme preload script -->
     <script>
-      (function() {
+      (function () {
         try {
           const saved = localStorage.getItem('theme');
           if (saved === 'dark') {
@@ -15,19 +15,14 @@
           } else if (saved === 'light') {
             document.documentElement.classList.remove('dark');
           } else {
-            // optional: respect OS preference when unset
-            const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+            const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
             if (prefersDark) document.documentElement.classList.add('dark');
           }
-        } catch (e) {
-          // ignore
-        }
+        } catch (e) {}
       })();
     </script>
-
-    <!-- Google Analytics (keep your GA snippet)... -->
-    <script type="module" crossorigin src="/assets/index-DR8dKAIO.js"></script>
-    <link rel="stylesheet" crossorigin href="/assets/index-BTqqNQek.css">
+    <script type="module" crossorigin src="/assets/index-BpNcaVzk.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/index-Dj2Lb0-Z.css">
   </head>
 
   <body class="antialiased bg-gray-50 dark:bg-slate-900 text-slate-900 dark:text-slate-100 transition-colors">

@@ -6,11 +6,13 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "deploy": "rm -rf dist assets && npm run build && cp -r dist/* . && git add . && git commit -m '🚀 Deploy update' && git push origin main && npm version patch -m '🔖 Bump version to %s' && git push origin --tags"
   },
   "dependencies": {
     "@fortawesome/fontawesome-free": "^6.5.1",
     "framer-motion": "^11.0.0",
+    "lucide-react": "^0.553.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },
@@ -21,5 +23,10 @@
     "postcss": "^8.4.21",
     "tailwindcss": "^3.4.14",
     "vite": "^5.0.0"
-  }
+  },
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not op_mini all"
+  ]
 }

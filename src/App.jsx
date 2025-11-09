@@ -7,14 +7,19 @@ import Education from './components/Education'
 import Certifications from './components/Certifications'
 import Contact from './components/Contact'
 import Footer from './components/Footer'
+import Projects from './components/Projects'
+import ScrollProgress from './components/ScrollProgress'
+
 
 export default function App() {
   return (
     <div className="min-h-screen bg-gray-50 dark:bg-slate-900 text-slate-900 dark:text-slate-100 transition-colors">
+      <ScrollProgress />
       <Header />
       <main className="container mx-auto px-4 sm:px-6 lg:px-8 pt-28 md:pt-32 pb-16 space-y-24">
         <Hero />
         <Experience />
+        <Projects />
         <Skills />
         <Education />
         <Certifications />
