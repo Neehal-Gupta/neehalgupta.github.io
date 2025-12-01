@@ -3,7 +3,7 @@ import React from "react";
 export default function Experience() {
   const roles = [
     {
-      title: "Lead Consultant",
+      title: "Consultant — 4B",
       period: "October 2025 – Present",
       achievements: [""],
       points: [
@@ -14,7 +14,7 @@ export default function Experience() {
       ],
     },
     {
-      title: "Consultant",
+      title: "Consultant — 4A",
       period: "August 2022 – September 2025",
       achievements: ["Bronze Award (2023)"],
       points: [

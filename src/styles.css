@@ -99,7 +99,7 @@ html { scroll-behavior: smooth; }
 .timeline-dot {
   position: absolute;
   left: -37.5px;
-  top: 6px;
+  top: 8.5px;
   width: 14px;
   height: 14px;
   background: #4f46e5; /* indigo-600 */
